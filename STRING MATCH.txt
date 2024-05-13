@@ -1,0 +1,11 @@
+def matches(string1, string2):
+    match_count = 0
+    if len(string1) != len(string2):
+        return "Strings must be of equal length."
+    for char1, char2 in zip(string1, string2):
+        if char1 == char2:
+            match_count += 1
+    return match_count
+string1 = "hello"
+string2 = "hallo"
+print("Number of matches:", matches(string1, string2))  

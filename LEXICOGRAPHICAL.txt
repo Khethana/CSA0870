@@ -1,0 +1,10 @@
+def count_sorted_vowel_strings(n):
+    if n == 1:
+        return 5
+    counts = [1] * 5  # a, e, i, o, u
+    for _ in range(2, n + 1):
+        for i in range(1, 5):
+            counts[i] += counts[i - 1]
+    return sum(counts)
+n = 2
+print(count_sorted_vowel_strings(n))  

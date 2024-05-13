@@ -1,0 +1,26 @@
+def is_perfect(num):
+    factors_sum = 1 
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            factors_sum += i
+            factors_sum += num // i
+    return factors_sum == num
+def print_perfect_numbers_factors(n, m):
+    count = 0
+    num = 2
+    while count < n:
+        if is_perfect(num):
+            print("Perfect number:", num)
+            print("Factors:", end=" ")
+            factors = [1]
+            for i in range(2, num):
+                if num % i == 0:
+                    factors.append(i)
+                    if len(factors) == m:
+                        break
+            print(factors)
+            count += 1
+        num += 1
+n = 3  
+m = 4  
+print_perfect_numbers_factors(n, m)

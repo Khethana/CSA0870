@@ -1,0 +1,15 @@
+def mth_max_and_nth_min(numbers, m, n):
+    sorted_numbers = sorted(numbers)
+    mth_max = sorted_numbers[-m]
+    nth_min = sorted_numbers[n - 1]
+    sum_result = mth_max + nth_min
+    diff_result = mth_max - nth_min  
+    return mth_max, nth_min, sum_result, diff_result
+numbers = [10, 5, 20, 15, 30, 25]
+m = 2
+n = 3
+mth_max, nth_min, sum_result, diff_result = mth_max_and_nth_min(numbers, m, n)
+print(f"Mth maximum number: {mth_max}")
+print(f"Nth minimum number: {nth_min}")
+print(f"Sum: {sum_result}")
+print(f"Difference: {diff_result}")

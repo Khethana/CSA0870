@@ -1,0 +1,9 @@
+def is_mirror_number(num):
+    reversed_num = int(str(num)[::-1])
+    return num == reversed_num
+def mirror_image(num):
+    reversed_num = int(str(num)[::-1])
+    return reversed_num if is_mirror_number(num) else "No"
+num = 12321
+print(mirror_image(num))  
+
